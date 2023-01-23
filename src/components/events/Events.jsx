@@ -6,6 +6,7 @@ import { Card,Modal } from '../muiComponents/muiExports'
 
 
 
+
 const Events = () => {
 
   const { location } = useParams()
@@ -20,14 +21,18 @@ const Events = () => {
   return (
     <div className='eventsSection'>
       <div className="top">
-        <input type="text" placeholder='search location' value={location} onChange={e => setNewLocation(e.currentTarget.value)} />
+        <input type="text" placeholder='search location' value={newlocation} onChange={e => setNewLocation(e.currentTarget.value)} />
 
         {
-          location.length !== 0 && <Link to={``}>GO</Link>
+          location.length !== 0 && <Link to={`/events/${newlocation}`}>GO</Link>
         }
       </div>
 
       <div className="events">
+        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
+        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
+        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
+        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
         <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
       
       </div>

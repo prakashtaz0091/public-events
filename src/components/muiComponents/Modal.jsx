@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import "./modal.css"
+import { Link } from 'react-router-dom';
 
-import {MapContainer, TileLayer} from "react-leaflet"
-import osm from "./osm-providers"
 
 const style = {
     position: 'absolute',
@@ -26,8 +25,6 @@ const style = {
 export default function BasicModal({ modalOpen, handleModalClose }) {
 
 
-    const [center, setCenter] = React.useState({lat:13.084622, lng: 80.248357})
-    const zoomLevel = 9;
 
     return (
         <div>
@@ -42,20 +39,29 @@ export default function BasicModal({ modalOpen, handleModalClose }) {
                         style={{
                             color: "white",
                             padding: "20px",
-                            fontSize: "30px"
+                            fontSize: "30px",
+                            marginTop:"50px"
                         }}
                     >
                         Event Location
                     </Typography>
-                    
-                        <MapContainer    
-                            center = {center}
-                            zoom = {zoomLevel}
-                        
-                        >
-                            <TileLayer url={osm.maptiler.url} attribution={""}/>
 
-                        </MapContainer>
+
+
+                    <a className='getLocationBtn' href="https://goo.gl/maps/gcqwSDAa8ks625e66">Get Exact Location</a>
+
+                    <a style={{marginLeft:"20px"}} onClick={handleModalClose}>Back</a>
+
+                    <div className="location">
+                        <div className='map-wrapper'
+                            dangerouslySetInnerHTML={{
+                                __html: `
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1134.9538253369353!2d88.07833956273545!3d26.5632761597283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1674470231626!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        ` }}
+
+                        />
+                       
+                    </div>
                 </Box>
             </Modal>
         </div>

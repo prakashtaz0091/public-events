@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import PlaceIcon from '@mui/icons-material/Place';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+import Menu from "./Menu"
+
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -32,6 +31,11 @@ export default function RecipeReviewCard({handleModalOpen}) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleShare = ()=>{
+
+  }
+
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -53,9 +57,8 @@ export default function RecipeReviewCard({handleModalOpen}) {
         <IconButton aria-label="get location" onClick={handleModalOpen}>
           <PlaceIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+
+        <Menu/>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

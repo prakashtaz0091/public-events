@@ -1,0 +1,20 @@
+.map-wrapper{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+.map{
+    position: absolute;
+    width: 95vw;
+    margin-top: 20px;
+}
+
+.getLocationBtn{
+    margin-left: 20px;
+}
+
+.location{
+    position: relative;
+}
+
+
