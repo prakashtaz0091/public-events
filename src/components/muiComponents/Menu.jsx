@@ -13,10 +13,10 @@ import {
 
 
 
-export default function BasicMenu() {
+export default function BasicMenu({exactLocation}) {
 
 
-    const [shareLink, setShareLink] = React.useState("https://goo.gl/maps/gcqwSDAa8ks625e66")
+    const [shareLink, setShareLink] = React.useState(exactLocation)
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);

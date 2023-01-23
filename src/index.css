@@ -37,6 +37,7 @@
   color: white;
 }
 
+
 @media (max-width: 490px){
   .heading{
       font-size: 4rem;

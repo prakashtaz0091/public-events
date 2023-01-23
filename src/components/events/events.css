@@ -29,7 +29,7 @@ input:focus{
 
 
 
-a{
+.yellowBtn{
     background-color: orange;
     border: none;
     padding: 10px;

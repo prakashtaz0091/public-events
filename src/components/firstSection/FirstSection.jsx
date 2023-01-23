@@ -20,7 +20,7 @@ const FirstSection = () => {
         <input type="text" placeholder='search location' value={location} onChange={e => setLocation(e.currentTarget.value)} />
 
         {
-          location.length !== 0 && <Link to={`/events/${location}`}>GO</Link>
+          location.length !== 0 && <Link className='yellowBtn' to={`/events/${location}`}>GO</Link>
         }
 
     </div>

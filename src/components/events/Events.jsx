@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import "./events.css"
 import { Card,Modal } from '../muiComponents/muiExports'
+import axios from "axios";
 
 
 
@@ -18,26 +19,46 @@ const Events = () => {
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
 
+
+  const [events, setEvents] = React.useState(null)
+  
+
+
+  React.useEffect(()=>{
+    const options = {method: 'GET', url: 'http://127.0.0.1:8000/api/events/'};
+  
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+      setEvents(response.data)
+    }).catch(function (error) {
+      console.error(error);
+    });
+
+  },[])
+
+
   return (
     <div className='eventsSection'>
       <div className="top">
         <input type="text" placeholder='search location' value={newlocation} onChange={e => setNewLocation(e.currentTarget.value)} />
 
         {
-          location.length !== 0 && <Link to={`/events/${newlocation}`}>GO</Link>
+          location.length !== 0 && <Link className='yellowBtn' to={`/events/${newlocation}`}>GO</Link>
         }
       </div>
 
       <div className="events">
-        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
-        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
-        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
-        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
-        <Card handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
-      
+
+        {
+          events && events.map(event =>{
+            return(
+              <Card key={event.id} event = {event} handleModalOpen={handleModalOpen} handleModalClose={handleModalClose}/>
+              
+            )
+          })
+        }
       </div>
 
-      <Modal modalOpen={modalOpen} handleModalClose={handleModalClose}/>
       
 
    
