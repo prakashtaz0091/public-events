@@ -1,0 +1,49 @@
+
+
+.firstSection{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;    
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+p{
+    letter-spacing: 0.6rem;
+    line-height: 2rem;
+}
+
+
+input{
+    margin: 20px 0;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+
+
+a{
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    min-width: 100px;
+    font-weight: bold;
+    transition: 0.2s;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+a:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px 2px white;
+}
+

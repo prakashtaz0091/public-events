@@ -1,0 +1,56 @@
+.eventsSection{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+
+input{
+    margin: 20px 0;
+    text-align: center;
+    padding: 15px 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+
+
+a{
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    min-width: 100px;
+    font-weight: bold;
+    transition: 0.2s;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+
+.events{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1470px;
+    margin: auto;
+}
+
+
+
