@@ -35,6 +35,8 @@ export default function BasicMenu({exactLocation}) {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+
+                style={{color:"white"}}
             >
                 <ShareIcon />
             </Button>

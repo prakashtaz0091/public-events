@@ -13,7 +13,7 @@ const App = () => {
 
       <Routes>
         <Route  path="/" element={<FirstSection />} />
-        <Route path="events/:location" element={<Events />} />
+        <Route path="/events" element={<Events />} />
         <Route path="*" element={<PageNotFound />} />
 
 

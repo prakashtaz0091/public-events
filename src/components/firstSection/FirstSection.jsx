@@ -4,7 +4,6 @@ import './firstSection.css'
 
 const FirstSection = () => {
 
-  const [location, setLocation] = React.useState("")
 
 
 
@@ -17,11 +16,10 @@ const FirstSection = () => {
         Your gateway to well planned public events !!!
       </p>
 
-        <input type="text" placeholder='search location' value={location} onChange={e => setLocation(e.currentTarget.value)} />
+        
 
-        {
-          location.length !== 0 && <Link className='yellowBtn' to={`/events/${location}`}>GO</Link>
-        }
+       <Link className='yellowBtn' style={{marginTop:"30px"}} to={`/events`}>Events</Link>
+       
 
     </div>
   )
